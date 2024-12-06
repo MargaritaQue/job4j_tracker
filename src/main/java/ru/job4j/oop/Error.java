@@ -28,5 +28,4 @@ public class Error {
         er.printInfo();
     }
 
-
 }
