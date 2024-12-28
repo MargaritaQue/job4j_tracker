@@ -31,4 +31,13 @@ class PointTest {
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
 
+    @Test
+    void when456to126then4dot24() {
+        double expected = 4.24;
+        Point a = new Point(4, 5, 6);
+        Point b = new Point(1, 2, 6);
+        double output = a.distance3d(b);
+        assertThat(output).isEqualTo(expected, withPrecision(0.01));
+    }
+
 }
