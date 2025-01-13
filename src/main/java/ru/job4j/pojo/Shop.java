@@ -9,7 +9,6 @@ public class Shop {
                 x = i;
                 break;
             }
-
         }
         return x;
     }
