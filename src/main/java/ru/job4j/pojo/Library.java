@@ -24,6 +24,7 @@ public class Library {
             Book book = books[i];
             System.out.println(book.getName() + ", " + book.getCount());
         }
+
         System.out.println();
         System.out.println("Shown only book.name = Clean code");
         for (int i = 0; i < books.length; i++) {
