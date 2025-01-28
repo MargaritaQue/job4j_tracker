@@ -153,7 +153,6 @@ class StartUITest {
         );
     }
 
-
     @Test
     void whenFindByIdActionTestOutputIsSuccessfully() {
         Output output = new StubOutput();
