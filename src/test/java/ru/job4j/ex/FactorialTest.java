@@ -9,10 +9,11 @@ class FactorialTest {
 
     @Test
     public void whenException() {
+        Factorial factorial = new Factorial();
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    Factorial.calc(-1);
+                    factorial.calc(-1);
                 });
         assertThat(exception.getMessage()).isEqualTo("Number could not be less than 0");
     }
