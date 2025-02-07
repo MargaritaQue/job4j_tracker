@@ -21,26 +21,13 @@ public class ValidateInput implements Input {
         boolean invalid = true;
         int value = -1;
         do {
-            String result = input.askStr(question);
-            if (!isNumber(result)) {
-                System.out.println("Пожалуйста, введите корректные данные");
-                continue;
+            try {
+                value = input.askInt(question);
+                invalid = false;
+            } catch (NumberFormatException nfe) {
+                output.println("Пожалуйста, введите корректные данные");
             }
-            value = Integer.parseInt(result);
-            invalid = false;
         } while (invalid);
         return value;
-    }
-
-    private boolean isNumber(String value) {
-        boolean result = true;
-        char[] check = value.toCharArray();
-        for (char number : check) {
-            if (number < 48 || number > 57) {
-                result = false;
-                break;
-            }
-        }
-        return result;
     }
 }
