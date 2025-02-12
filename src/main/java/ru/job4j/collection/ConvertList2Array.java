@@ -11,12 +11,11 @@ public class ConvertList2Array {
         int cell = 0;
         for (Integer number : list) {
             array[row][cell] = number;
-            if (cell < cells - 1) {
-                cell++;
-            } else {
-                cell = 0;
+            if (cell >= cells - 1) {
+                cell = -1;
                 row++;
             }
+            cell++;
         }
         return array;
     }
