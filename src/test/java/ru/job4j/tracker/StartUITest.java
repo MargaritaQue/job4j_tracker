@@ -113,7 +113,7 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Input input = new MockInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
+                new String[] {"0", "1"}
         );
         List<UserAction> actions = Arrays.asList(
                 new FindAllAction(output),
