@@ -61,7 +61,8 @@ public class AnalyzeByMap {
         Map<String, Integer> sub = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                sub.merge(subject.name(), subject.score(), Integer::sum);
+                sub.getOrDefault(subject.name(), null);
+                sub.put(subject.name(), subject.score() + sub.get(subject.name()));
             }
         }
         LinkedList<Label> labels = new LinkedList<>();
