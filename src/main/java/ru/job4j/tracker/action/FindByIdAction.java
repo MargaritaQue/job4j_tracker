@@ -1,10 +1,10 @@
 package ru.job4j.tracker.action;
 
+import ru.job4j.tracker.MemTracker;
 import ru.job4j.tracker.Store;
 import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.output.Output;
-import ru.job4j.tracker.MemTracker;
 
 public class FindByIdAction implements UserAction {
     private final Output output;
@@ -20,11 +20,6 @@ public class FindByIdAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Store tracker) {
-        return false;
-    }
-
-    @Override
-    public boolean execute(Input input, MemTracker tracker) {
         output.println("=== Вывод заявки по id ===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
@@ -34,5 +29,10 @@ public class FindByIdAction implements UserAction {
             output.println("Заявка с введенным id: " + id + " не найдена.");
         }
         return true;
+    }
+
+    @Override
+    public boolean execute(Input input, MemTracker tracker) {
+        return false;
     }
 }

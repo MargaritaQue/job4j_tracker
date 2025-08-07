@@ -1,10 +1,10 @@
 package ru.job4j.tracker.action;
 
+import ru.job4j.tracker.MemTracker;
 import ru.job4j.tracker.Store;
 import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.output.Output;
-import ru.job4j.tracker.MemTracker;
 
 public class ReplaceAction implements UserAction {
     private final Output output;
@@ -20,11 +20,6 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Store tracker) {
-        return false;
-    }
-
-    @Override
-    public boolean execute(Input input, MemTracker tracker) {
         output.println("=== Редактирование заявки ===");
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter name: ");
@@ -35,5 +30,10 @@ public class ReplaceAction implements UserAction {
             output.println("Ошибка замены заявки.");
         }
         return true;
+    }
+
+    @Override
+    public boolean execute(Input input, MemTracker tracker) {
+        return false;
     }
 }

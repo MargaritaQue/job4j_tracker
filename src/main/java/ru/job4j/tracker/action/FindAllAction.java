@@ -1,10 +1,10 @@
 package ru.job4j.tracker.action;
 
+import ru.job4j.tracker.MemTracker;
 import ru.job4j.tracker.Store;
 import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.output.Output;
-import ru.job4j.tracker.MemTracker;
 
 import java.util.List;
 
@@ -22,11 +22,6 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Store tracker) {
-        return false;
-    }
-
-    @Override
-    public boolean execute(Input input, MemTracker tracker) {
         output.println("=== Вывод всех заявок ===");
         List<Item> items = tracker.findAll();
         if (!items.isEmpty()) {
@@ -37,5 +32,10 @@ public class FindAllAction implements UserAction {
             output.println("Хранилище еще не содержит заявок");
         }
         return true;
+    }
+
+    @Override
+    public boolean execute(Input input, MemTracker tracker) {
+        return false;
     }
 }
