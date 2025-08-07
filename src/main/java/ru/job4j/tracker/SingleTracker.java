@@ -9,7 +9,7 @@ public class SingleTracker {
     private SingleTracker() {
     }
 
-    private Tracker tracker = new Tracker();
+    private MemTracker tracker = new MemTracker();
 
     public static SingleTracker getInstance() {
         if (instance == null) {
